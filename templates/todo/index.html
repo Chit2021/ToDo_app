@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>To-Do List</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	{% load static %}
+	<link rel="stylesheet" href=" {% static 'css/todo.css' %} ">
+</head>
+ <!-- Bootstrap CSS -->
+ <!-- link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" -->
+<body ng-app="toDo" ng-controller="toDoController">
+	<!-- script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script -->
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-8">
+			<div class="row" style="border:1px gray solid;background-color: palegoldenrod;margin-top:10%;">
+				<!--h1 class="intro">My To-Do List </h1>
+				<a href="#" class="btn btn-info btn-lg">
+					<span class="glyphicon glyphicon-ok"></span> My Todo-s
+				</a -->
+				<div class="p-1 h1 text-primary text-center mx-auto display-inline-block">
+					<i class="fa fa-check bg-primary text-white rounded p-2"></i>
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					<u>My Todo-s</u>
+				</div>
+			<div class="" style="padding-left:30% ;padding-top:5%">
+				<form ng-submit="todoAdd()">
+					<input type="text" ng-model="todoInput" placeholder="Add a new to do!">
+					<button type="submit" class="btn btn-sm btn-success" ng-click="saveData()">Submit</button>
+				</form>
+				<br>
+			
+				<div ng-repeat="todo in todoList" class="">
+					<input type="checkbox" ng-model="todo.done" class="col-sm-1"><span class="textitem"  ng-bind="todo.todoText"></span>
+				</div>
+				<br>
+				<p> 
+					<button ng-click="remove()" class="btn btn-sm btn-success" >Done</button>
+				</p>
+			</div>		
+			</div>	
+		</div>
+		<div class="col-sm-2">
+		</div>
+	</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+	<script src=" {% static 'js/todo.js' %} "></script>
+</body>
+</html>
+
+
